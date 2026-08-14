@@ -1,0 +1,44 @@
+---
+import PageCard from '../../components/PageCard.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { pageMetadata } from '../../config/seo';
+import { writing } from '../../data/writing';
+
+const publishedWriting = writing
+  .filter((entry) => entry.status === 'published')
+  .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+---
+
+<BaseLayout
+  title={pageMetadata.writing.title}
+  description={pageMetadata.writing.description}
+  path={pageMetadata.writing.path}
+  currentSection="writing"
+>
+  <section class="page-section">
+    <SectionHeading
+      eyebrow="Notes"
+      title="Writing"
+      description="Published notes and essays will appear here."
+    />
+
+    {
+      publishedWriting.length > 0 ? (
+        <div class="card-list">
+          {publishedWriting.map((entry) => (
+            <PageCard
+              title={entry.title}
+              summary={entry.summary}
+              href={`/writing/${entry.slug}/`}
+              metadata={entry.publishedAt}
+              tags={entry.tags}
+            />
+          ))}
+        </div>
+      ) : (
+        <p class="reserved-note">No public writing has been published yet.</p>
+      )
+    }
+  </section>
+</BaseLayout>

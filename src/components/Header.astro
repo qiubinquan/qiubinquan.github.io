@@ -1,0 +1,26 @@
+---
+import { primaryNavigation } from '../config/navigation';
+import { site } from '../config/site';
+
+interface Props {
+  currentSection?: string;
+}
+
+const { currentSection = 'home' } = Astro.props;
+---
+
+<header class="site-header">
+  <a class="site-title" href="/" aria-label={`${site.name} home`}>{site.name}</a>
+  <nav class="primary-nav" aria-label="Primary navigation">
+    {
+      primaryNavigation.map((item) => (
+        <a
+          href={item.href}
+          aria-current={currentSection === item.section ? 'page' : undefined}
+        >
+          {item.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>

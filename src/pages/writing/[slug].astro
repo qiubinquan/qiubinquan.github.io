@@ -1,0 +1,40 @@
+---
+import BackLink from '../../components/BackLink.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { writing } from '../../data/writing';
+
+export function getStaticPaths() {
+  return writing
+    .filter((entry) => entry.status === 'published')
+    .map((entry) => ({
+      params: { slug: entry.slug },
+      props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+---
+
+<BaseLayout
+  title={entry.title}
+  description={entry.summary || entry.title}
+  path={`/writing/${entry.slug}/`}
+  currentSection="writing"
+>
+  <article class="page-section article-page">
+    <Breadcrumb
+      items={[
+        { label: 'Home', url: '/' },
+        { label: 'Writing', url: '/writing/' },
+        { label: entry.title, url: `/writing/${entry.slug}/` },
+      ]}
+    />
+    <p class="eyebrow">{entry.category}</p>
+    <h1>{entry.title}</h1>
+    {entry.publishedAt && <p class="article-meta">Published {entry.publishedAt}</p>}
+    {entry.summary && <p class="lead">{entry.summary}</p>}
+    <p>This writing entry is ready for public content.</p>
+    <BackLink href="/writing/" label="Back to Writing" />
+  </article>
+</BaseLayout>

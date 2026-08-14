@@ -1,0 +1,56 @@
+---
+import SectionHeading from '../components/SectionHeading.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { pageMetadata } from '../config/seo';
+import { profile } from '../data/profile';
+---
+
+<BaseLayout
+  title={pageMetadata.about.title}
+  description={pageMetadata.about.description}
+  path={pageMetadata.about.path}
+  currentSection="about"
+>
+  <section class="page-section">
+    <SectionHeading
+      eyebrow="Profile"
+      title="About"
+      description={profile.bio || 'A concise academic profile can be added here when public details are ready.'}
+    />
+
+    <div class="info-grid">
+      <section>
+        <h2>Affiliation</h2>
+        <p>{profile.affiliation || 'To be added.'}</p>
+      </section>
+      <section>
+        <h2>Location</h2>
+        <p>{profile.location || 'To be added.'}</p>
+      </section>
+      <section>
+        <h2>Interests</h2>
+        {
+          profile.interests.length > 0 ? (
+            <ul>
+              {profile.interests.map((item) => <li>{item}</li>)}
+            </ul>
+          ) : (
+            <p>To be added.</p>
+          )
+        }
+      </section>
+      <section>
+        <h2>Skills</h2>
+        {
+          profile.skills.length > 0 ? (
+            <ul>
+              {profile.skills.map((group) => <li>{group.name}: {group.items.join(', ')}</li>)}
+            </ul>
+          ) : (
+            <p>To be added.</p>
+          )
+        }
+      </section>
+    </div>
+  </section>
+</BaseLayout>

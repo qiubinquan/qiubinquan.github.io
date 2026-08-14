@@ -1,0 +1,44 @@
+---
+import SectionHeading from '../components/SectionHeading.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { pageMetadata } from '../config/seo';
+import { profile } from '../data/profile';
+---
+
+<BaseLayout
+  title={pageMetadata.home.title}
+  description={pageMetadata.home.description}
+  path={pageMetadata.home.path}
+  currentSection="home"
+>
+  <section class="hero">
+    <SectionHeading
+      eyebrow={profile.role}
+      title={profile.name}
+      description={profile.bio || 'Personal academic website for notes, selected writing, and future public work.'}
+    />
+    <div class="hero-actions">
+      <a class="button primary" href="/writing/">Read Writing</a>
+      <a class="button" href="/about/">About</a>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="two-column">
+      <div>
+        <h2>Current Focus</h2>
+        <p>
+          This site is prepared as a quiet, maintainable academic home. Public writing can be added
+          when ready, while sensitive project material remains unpublished.
+        </p>
+      </div>
+      <div>
+        <h2>Site Scope</h2>
+        <p>
+          The first version includes About, Projects, Writing, and Contact. Team-oriented sections
+          are reserved in the codebase for later expansion.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

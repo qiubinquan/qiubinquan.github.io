@@ -1,0 +1,19 @@
+---
+import { externalLinks, site } from '../config/site';
+
+const links = Object.entries(externalLinks).filter(([, value]) => value);
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <p>&copy; {year} {site.name}</p>
+  {
+    links.length > 0 && (
+      <nav class="footer-links" aria-label="External links">
+        {links.map(([label, href]) => (
+          <a href={href as string}>{label}</a>
+        ))}
+      </nav>
+    )
+  }
+</footer>

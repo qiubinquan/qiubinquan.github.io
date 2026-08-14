@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  summary?: string;
+  href?: string;
+  metadata?: string;
+  tags?: string[];
+}
+
+const { title, summary, href, metadata, tags = [] } = Astro.props;
+const TitleTag = href ? 'a' : 'span';
+---
+
+<article class="page-card">
+  <h2>
+    <TitleTag href={href}>{title}</TitleTag>
+  </h2>
+  {metadata && <p class="card-meta">{metadata}</p>}
+  {summary && <p>{summary}</p>}
+  {
+    tags.length > 0 && (
+      <ul class="tag-list" aria-label="Tags">
+        {tags.map((tag) => <li>{tag}</li>)}
+      </ul>
+    )
+  }
+</article>

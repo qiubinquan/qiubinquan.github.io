@@ -1,0 +1,35 @@
+---
+import SectionHeading from '../components/SectionHeading.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { pageMetadata } from '../config/seo';
+import { externalLinks } from '../config/site';
+
+const links = Object.entries(externalLinks).filter(([, value]) => value);
+---
+
+<BaseLayout
+  title={pageMetadata.contact.title}
+  description={pageMetadata.contact.description}
+  path={pageMetadata.contact.path}
+  currentSection="contact"
+>
+  <section class="page-section">
+    <SectionHeading
+      eyebrow="Contact"
+      title="Contact"
+      description="Public contact links can be added here when they are ready to share."
+    />
+
+    {
+      links.length > 0 ? (
+        <ul class="contact-list">
+          {links.map(([label, href]) => (
+            <li><a href={href as string}>{label}</a></li>
+          ))}
+        </ul>
+      ) : (
+        <p class="reserved-note">No public contact links are listed yet.</p>
+      )
+    }
+  </section>
+</BaseLayout>
