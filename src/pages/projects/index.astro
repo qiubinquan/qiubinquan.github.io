@@ -2,9 +2,6 @@
 import SectionHeading from '../../components/SectionHeading.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { pageMetadata } from '../../config/seo';
-import { projects } from '../../data/projects';
-
-const publicProjects = projects.filter((project) => project.status === 'published');
 ---
 
 <BaseLayout
@@ -20,19 +17,6 @@ const publicProjects = projects.filter((project) => project.status === 'publishe
       description="This section is reserved for future public work."
     />
 
-    {
-      publicProjects.length > 0 ? (
-        <div class="card-list">
-          {publicProjects.map((project) => (
-            <article class="page-card">
-              <h2>{project.title}</h2>
-              <p>{project.summary}</p>
-            </article>
-          ))}
-        </div>
-      ) : (
-        <p class="reserved-note">No project details are published in this version.</p>
-      )
-    }
+    <p class="reserved-note">No project details are published in this version.</p>
   </section>
 </BaseLayout>
