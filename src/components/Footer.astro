@@ -3,6 +3,14 @@ import { externalLinks, site } from '../config/site';
 
 const links = Object.entries(externalLinks).filter(([, value]) => value);
 const year = new Date().getFullYear();
+const labels: Record<string, string> = {
+  email: 'Email',
+  github: 'GitHub',
+  googleScholar: 'Google Scholar',
+  linkedin: 'LinkedIn',
+  orcid: 'ORCID',
+  cv: 'CV',
+};
 ---
 
 <footer class="site-footer">
@@ -11,7 +19,7 @@ const year = new Date().getFullYear();
     links.length > 0 && (
       <nav class="footer-links" aria-label="External links">
         {links.map(([label, href]) => (
-          <a href={href as string}>{label}</a>
+          <a href={href as string}>{labels[label] || label}</a>
         ))}
       </nav>
     )

@@ -19,6 +19,7 @@ html {
   background: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-sans);
+  font-size: 18px;
 }
 
 body {
@@ -90,18 +91,18 @@ a:hover {
 }
 
 main {
-  padding: 48px 0 72px;
+  padding: 36px 0 72px;
 }
 
 .hero {
   display: grid;
-  gap: 28px;
-  min-height: 48vh;
-  padding: 64px 0 56px;
+  gap: 24px;
+  min-height: 36vh;
+  padding: 44px 0 48px;
 }
 
 .section-heading {
-  max-width: 760px;
+  max-width: 860px;
 }
 
 .eyebrow {
@@ -120,11 +121,17 @@ h2 {
 }
 
 h1 {
-  font-size: clamp(2.6rem, 8vw, 5.75rem);
+  font-size: clamp(2rem, 5vw, 3.75rem);
 }
 
 h2 {
-  font-size: 1.25rem;
+  font-size: 1.45rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  line-height: 1.25;
+  margin: 0;
 }
 
 p {
@@ -133,7 +140,7 @@ p {
 }
 
 .section-heading p {
-  font-size: 1.1rem;
+  font-size: 1.18rem;
   margin: 18px 0 0;
 }
 
@@ -174,12 +181,13 @@ p {
 .two-column,
 .info-grid {
   display: grid;
-  gap: 28px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px;
+  grid-template-columns: 1fr;
 }
 
 .info-grid {
   margin-top: 36px;
+  max-width: 900px;
 }
 
 .card-list {
@@ -202,8 +210,37 @@ p {
 .card-meta,
 .article-meta {
   color: var(--color-warm);
-  font-size: 0.92rem;
+  font-size: 0.98rem;
   margin: 8px 0;
+}
+
+.timeline-list {
+  display: grid;
+  gap: 22px;
+  margin-top: 18px;
+}
+
+.timeline-item {
+  border-left: 3px solid var(--color-border);
+  padding-left: 18px;
+}
+
+.timeline-item p {
+  margin: 8px 0;
+}
+
+.timeline-item ul,
+.publication-list,
+.info-grid ul {
+  color: var(--color-muted);
+  line-height: 1.7;
+  padding-left: 1.25rem;
+}
+
+.publication-list li + li,
+.info-grid li + li,
+.timeline-item li + li {
+  margin-top: 8px;
 }
 
 .tag-list,
@@ -251,7 +288,7 @@ p {
 
 .lead {
   color: var(--color-text);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
 }
 
 .back-link {

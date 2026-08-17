@@ -92,6 +92,11 @@ export interface Profile {
   bio: string;
   interests: string[];
   education: EducationItem[];
+  projectExperience: ExperienceItem[];
+  workExperience: ExperienceItem[];
+  publications: PublicationItem[];
+  patents: string[];
+  awards: string[];
   skills: SkillGroup[];
 }
 
@@ -106,6 +111,23 @@ export interface EducationItem {
 export interface SkillGroup {
   name: string;
   items: string[];
+}
+
+export interface ExperienceItem {
+  organization: string;
+  title: string;
+  location: string;
+  startYear: string;
+  endYear: string | 'present';
+  summary: string;
+  highlights: string[];
+}
+
+export interface PublicationItem {
+  authors: string;
+  title: string;
+  venue: string;
+  year: string;
 }
 
 export interface Project {

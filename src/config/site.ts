@@ -11,7 +11,7 @@ export const site: SiteIdentity = {
 };
 
 export const externalLinks: ExternalLinks = {
-  email: '',
+  email: 'mailto:qiubinquan2014@outlook.com',
   github: '',
   googleScholar: '',
   linkedin: '',

@@ -5,6 +5,9 @@ import { pageMetadata } from '../config/seo';
 import { externalLinks } from '../config/site';
 
 const links = Object.entries(externalLinks).filter(([, value]) => value);
+const labels: Record<string, string> = {
+  email: externalLinks.email.replace('mailto:', ''),
+};
 ---
 
 <BaseLayout
@@ -17,14 +20,14 @@ const links = Object.entries(externalLinks).filter(([, value]) => value);
     <SectionHeading
       eyebrow="Contact"
       title="Contact"
-      description="Public contact links can be added here when they are ready to share."
+      description="For academic or professional contact, please use the public email below."
     />
 
     {
       links.length > 0 ? (
         <ul class="contact-list">
           {links.map(([label, href]) => (
-            <li><a href={href as string}>{label}</a></li>
+            <li><a href={href as string}>{labels[label] || label}</a></li>
           ))}
         </ul>
       ) : (
