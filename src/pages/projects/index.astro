@@ -3,6 +3,10 @@ import SectionHeading from '../../components/SectionHeading.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { pageMetadata } from '../../config/seo';
 import { profile } from '../../data/profile';
+
+const projects = [...profile.projectExperience, ...profile.workExperience].sort(
+  (a, b) => Number.parseInt(b.startYear, 10) - Number.parseInt(a.startYear, 10),
+);
 ---
 
 <BaseLayout
@@ -18,44 +22,20 @@ import { profile } from '../../data/profile';
       description="Selected project experience across robotics, automation, motion control, and mechanical behavior analysis."
     />
 
-    <div class="info-grid">
-      <section>
-        <h2>Project Experience</h2>
-        <div class="timeline-list">
-          {profile.projectExperience.map((project) => (
-            <article class="timeline-item">
-              <p class="article-meta">
-                {project.startYear}-{project.endYear} · {project.location}
-              </p>
-              <h3>{project.title}</h3>
-              <p><strong>{project.organization}</strong></p>
-              <p>{project.summary}</p>
-              <ul>
-                {project.highlights.map((highlight) => <li>{highlight}</li>)}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2>Work Project Details</h2>
-        <div class="timeline-list">
-          {profile.workExperience.map((work) => (
-            <article class="timeline-item">
-              <p class="article-meta">
-                {work.startYear}-{work.endYear} · {work.location}
-              </p>
-              <h3>{work.title}</h3>
-              <p><strong>{work.organization}</strong></p>
-              <p>{work.summary}</p>
-              <ul>
-                {work.highlights.map((highlight) => <li>{highlight}</li>)}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
+    <div class="timeline-list">
+      {projects.map((project) => (
+        <article class="timeline-item">
+          <p class="article-meta">
+            {project.startYear}-{project.endYear} · {project.location}
+          </p>
+          <h2>{project.title}</h2>
+          <p><strong>{project.organization}</strong></p>
+          <p>{project.summary}</p>
+          <ul>
+            {project.highlights.map((highlight) => <li>{highlight}</li>)}
+          </ul>
+        </article>
+      ))}
     </div>
   </section>
 </BaseLayout>

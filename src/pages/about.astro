@@ -66,15 +66,13 @@ const email = externalLinks.email.replace('mailto:', '');
         <h2>Work Experience</h2>
         {
           profile.workExperience.length > 0 ? (
-            <div class="timeline-list">
+            <ul>
               {profile.workExperience.map((item) => (
-                <article class="timeline-item">
-                  <p class="card-meta">{item.startYear}-{item.endYear}</p>
-                  <h3>{item.title}</h3>
-                  <p>{item.organization}</p>
-                </article>
+                <li>
+                  {item.title}, {item.organization} ({item.startYear}-{item.endYear})
+                </li>
               ))}
-            </div>
+            </ul>
           ) : (
             <p>To be added.</p>
           )
