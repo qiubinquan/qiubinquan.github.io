@@ -22,12 +22,12 @@ export const pageMetadata = {
   },
   projects: {
     title: 'Projects',
-    description: 'Reserved for future public work.',
+    description: `Selected project experience by ${site.name}.`,
     path: '/projects/',
   },
   writing: {
     title: 'Writing',
-    description: `Writing and notes by ${site.name}.`,
+    description: `Publications and writing by ${site.name}.`,
     path: '/writing/',
   },
   contact: {

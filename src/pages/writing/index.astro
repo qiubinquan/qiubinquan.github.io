@@ -1,13 +1,8 @@
 ---
-import PageCard from '../../components/PageCard.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { pageMetadata } from '../../config/seo';
-import { writing } from '../../data/writing';
-
-const publishedWriting = writing
-  .filter((entry) => entry.status === 'published')
-  .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+import { profile } from '../../data/profile';
 ---
 
 <BaseLayout
@@ -18,27 +13,19 @@ const publishedWriting = writing
 >
   <section class="page-section">
     <SectionHeading
-      eyebrow="Notes"
+      eyebrow="Publications"
       title="Writing"
-      description="Published notes and essays will appear here."
+      description="Published papers and conference work from robotics, manufacturing automation, and mechanical engineering."
     />
 
-    {
-      publishedWriting.length > 0 ? (
-        <div class="card-list">
-          {publishedWriting.map((entry) => (
-            <PageCard
-              title={entry.title}
-              summary={entry.summary}
-              href={`/writing/${entry.slug}/`}
-              metadata={entry.publishedAt}
-              tags={entry.tags}
-            />
-          ))}
-        </div>
-      ) : (
-        <p class="reserved-note">No public writing has been published yet.</p>
-      )
-    }
+    <ol class="publication-list">
+      {profile.publications.map((publication) => (
+        <li>
+          <strong>{publication.title}</strong>
+          <span>{publication.authors}</span>
+          <span>{publication.venue}, {publication.year}</span>
+        </li>
+      ))}
+    </ol>
   </section>
 </BaseLayout>

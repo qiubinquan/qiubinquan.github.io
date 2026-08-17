@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Projects" description="Redirect to Projects." path="/project/" currentSection="projects">
+  <section class="page-section">
+    <h1>Projects</h1>
+    <p><a href="/projects/">Open Projects</a></p>
+  </section>
+  <script is:inline>
+    window.location.replace('/projects/');
+  </script>
+</BaseLayout>

@@ -2,6 +2,7 @@
 import SectionHeading from '../../components/SectionHeading.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { pageMetadata } from '../../config/seo';
+import { profile } from '../../data/profile';
 ---
 
 <BaseLayout
@@ -12,11 +13,25 @@ import { pageMetadata } from '../../config/seo';
 >
   <section class="page-section">
     <SectionHeading
-      eyebrow="Reserved"
+      eyebrow="Research and engineering"
       title="Projects"
-      description="This section is reserved for future public work."
+      description="Selected project experience across robotics, automation, motion control, and mechanical behavior analysis."
     />
 
-    <p class="reserved-note">No project details are published in this version.</p>
+    <div class="timeline-list">
+      {profile.projectExperience.map((project) => (
+        <article class="timeline-item">
+          <p class="article-meta">
+            {project.startYear}-{project.endYear} · {project.location}
+          </p>
+          <h2>{project.title}</h2>
+          <p><strong>{project.organization}</strong></p>
+          <p>{project.summary}</p>
+          <ul>
+            {project.highlights.map((highlight) => <li>{highlight}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
   </section>
 </BaseLayout>

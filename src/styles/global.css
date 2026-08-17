@@ -19,7 +19,7 @@ html {
   background: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-sans);
-  font-size: 18px;
+  font-size: 20px;
 }
 
 body {
@@ -121,15 +121,15 @@ h2 {
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 3.75rem);
+  font-size: clamp(1.55rem, 3.6vw, 2.8rem);
 }
 
 h2 {
-  font-size: 1.45rem;
+  font-size: 1.25rem;
 }
 
 h3 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.25;
   margin: 0;
 }
@@ -140,7 +140,7 @@ p {
 }
 
 .section-heading p {
-  font-size: 1.18rem;
+  font-size: 1.22rem;
   margin: 18px 0 0;
 }
 
@@ -243,6 +243,11 @@ p {
   margin-top: 8px;
 }
 
+.publication-list li {
+  display: grid;
+  gap: 4px;
+}
+
 .tag-list,
 .contact-list {
   display: flex;
@@ -288,7 +293,7 @@ p {
 
 .lead {
   color: var(--color-text);
-  font-size: 1.25rem;
+  font-size: 1.32rem;
 }
 
 .back-link {
