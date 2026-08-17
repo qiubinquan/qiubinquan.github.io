@@ -7,7 +7,7 @@ export const contentRegistry: ContentRegistry = {
     detailPathPattern: null,
   },
   writing: {
-    status: 'published',
+    status: 'reserved',
     listPath: '/writing/',
     detailPathPattern: '/writing/:slug/',
   },
@@ -17,7 +17,7 @@ export const contentRegistry: ContentRegistry = {
     detailPathPattern: '/members/:slug/',
   },
   publications: {
-    status: 'reserved',
+    status: 'published',
     listPath: '/publications/',
     detailPathPattern: null,
   },

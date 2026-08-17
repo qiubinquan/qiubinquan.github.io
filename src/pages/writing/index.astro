@@ -1,31 +1,13 @@
 ---
-import SectionHeading from '../../components/SectionHeading.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { pageMetadata } from '../../config/seo';
-import { profile } from '../../data/profile';
 ---
 
-<BaseLayout
-  title={pageMetadata.writing.title}
-  description={pageMetadata.writing.description}
-  path={pageMetadata.writing.path}
-  currentSection="writing"
->
+<BaseLayout title="Publications" description="Redirect to Publications." path="/writing/" currentSection="publications">
   <section class="page-section">
-    <SectionHeading
-      eyebrow="Publications"
-      title="Writing"
-      description="Published papers and conference work from robotics, manufacturing automation, and mechanical engineering."
-    />
-
-    <ol class="publication-list">
-      {profile.publications.map((publication) => (
-        <li>
-          <strong>{publication.title}</strong>
-          <span>{publication.authors}</span>
-          <span>{publication.venue}, {publication.year}</span>
-        </li>
-      ))}
-    </ol>
+    <h1>Publications</h1>
+    <p><a href="/publications/">Open Publications</a></p>
   </section>
+  <script is:inline>
+    window.location.replace('/publications/');
+  </script>
 </BaseLayout>

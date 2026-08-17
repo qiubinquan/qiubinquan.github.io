@@ -20,13 +20,13 @@ const { entry } = Astro.props;
   title={entry.title}
   description={entry.summary || entry.title}
   path={`/writing/${entry.slug}/`}
-  currentSection="writing"
+  currentSection="publications"
 >
   <article class="page-section article-page">
     <Breadcrumb
       items={[
         { label: 'Home', url: '/' },
-        { label: 'Writing', url: '/writing/' },
+        { label: 'Publications', url: '/publications/' },
         { label: entry.title, url: `/writing/${entry.slug}/` },
       ]}
     />
@@ -34,7 +34,7 @@ const { entry } = Astro.props;
     <h1>{entry.title}</h1>
     {entry.publishedAt && <p class="article-meta">Published {entry.publishedAt}</p>}
     {entry.summary && <p class="lead">{entry.summary}</p>}
-    <p>This writing entry is ready for public content.</p>
-    <BackLink href="/writing/" label="Back to Writing" />
+    <p>This publication entry is ready for public content.</p>
+    <BackLink href="/publications/" label="Back to Publications" />
   </article>
 </BaseLayout>

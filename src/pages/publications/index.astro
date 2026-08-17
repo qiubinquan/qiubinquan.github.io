@@ -1,0 +1,43 @@
+---
+import SectionHeading from '../../components/SectionHeading.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { pageMetadata } from '../../config/seo';
+import { profile } from '../../data/profile';
+---
+
+<BaseLayout
+  title={pageMetadata.publications.title}
+  description={pageMetadata.publications.description}
+  path={pageMetadata.publications.path}
+  currentSection="publications"
+>
+  <section class="page-section">
+    <SectionHeading
+      eyebrow="Research output"
+      title="Publications"
+      description="Published papers, conference work, and patent records from robotics, manufacturing automation, and mechanical engineering."
+    />
+
+    <div class="info-grid">
+      <section>
+        <h2>Publications</h2>
+        <ol class="publication-list">
+          {profile.publications.map((publication) => (
+            <li>
+              <strong>{publication.title}</strong>
+              <span>{publication.authors}</span>
+              <span>{publication.venue}, {publication.year}</span>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section>
+        <h2>Patents</h2>
+        <ul>
+          {profile.patents.map((patent) => <li>{patent}</li>)}
+        </ul>
+      </section>
+    </div>
+  </section>
+</BaseLayout>

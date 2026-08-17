@@ -17,9 +17,9 @@ export const primaryNavigation: NavigationItem[] = [
     section: 'projects',
   },
   {
-    label: 'Writing',
-    href: '/writing/',
-    section: 'writing',
+    label: 'Publications',
+    href: '/publications/',
+    section: 'publications',
   },
   {
     label: 'Contact',

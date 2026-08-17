@@ -63,72 +63,18 @@ const email = externalLinks.email.replace('mailto:', '');
         }
       </section>
       <section>
-        <h2>Project Experience</h2>
-        {
-          profile.projectExperience.length > 0 ? (
-            <div class="timeline-list">
-              {profile.projectExperience.map((item) => (
-                <article class="timeline-item">
-                  <p class="card-meta">{item.startYear}-{item.endYear} | {item.location}</p>
-                  <h3>{item.title}</h3>
-                  <p>{item.organization}</p>
-                  <p>{item.summary}</p>
-                  <ul>
-                    {item.highlights.map((highlight) => <li>{highlight}</li>)}
-                  </ul>
-                </article>
-              ))}
-            </div>
-          ) : (
-            <p>To be added.</p>
-          )
-        }
-      </section>
-      <section>
         <h2>Work Experience</h2>
         {
           profile.workExperience.length > 0 ? (
             <div class="timeline-list">
               {profile.workExperience.map((item) => (
                 <article class="timeline-item">
-                  <p class="card-meta">{item.startYear}-{item.endYear} | {item.location}</p>
+                  <p class="card-meta">{item.startYear}-{item.endYear}</p>
                   <h3>{item.title}</h3>
                   <p>{item.organization}</p>
-                  <p>{item.summary}</p>
-                  <ul>
-                    {item.highlights.map((highlight) => <li>{highlight}</li>)}
-                  </ul>
                 </article>
               ))}
             </div>
-          ) : (
-            <p>To be added.</p>
-          )
-        }
-      </section>
-      <section>
-        <h2>Publications</h2>
-        {
-          profile.publications.length > 0 ? (
-            <ol class="publication-list">
-              {profile.publications.map((item) => (
-                <li>
-                  {item.authors} "{item.title}." <em>{item.venue}</em>, {item.year}.
-                </li>
-              ))}
-            </ol>
-          ) : (
-            <p>To be added.</p>
-          )
-        }
-      </section>
-      <section>
-        <h2>Patents</h2>
-        {
-          profile.patents.length > 0 ? (
-            <ul>
-              {profile.patents.map((item) => <li>{item}</li>)}
-            </ul>
           ) : (
             <p>To be added.</p>
           )

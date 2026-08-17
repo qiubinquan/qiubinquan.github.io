@@ -26,9 +26,14 @@ export const pageMetadata = {
     path: '/projects/',
   },
   writing: {
-    title: 'Writing',
+    title: 'Publications',
     description: `Publications and writing by ${site.name}.`,
     path: '/writing/',
+  },
+  publications: {
+    title: 'Publications',
+    description: `Publications and patents by ${site.name}.`,
+    path: '/publications/',
   },
   contact: {
     title: 'Contact',
