@@ -2,24 +2,20 @@ import type { Profile } from '../types/content';
 
 export const profile: Profile = {
   name: 'Qiu Binquan',
-  role: 'Doctoral Student in Robotics and Automation',
-  affiliation: 'Hiroshima University',
-  location: 'Hiroshima, Japan',
+  role: 'Doctoral Student in Informatics and Data Science',
+  affiliation: 'Graduate School of Advanced Science and Engineering, Hiroshima University',
+  location: '',
   bio: 'Qiu Binquan is a doctoral student at Hiroshima University working across robotics, automation, motion control, and mechanical engineering. His experience includes industrial robot workcell optimization, medical robotics, lower-limb exoskeletons, and pipeline mechanical behavior analysis.',
   interests: [
     'Robotics and automation',
     'Motion control',
-    'Robot kinematics and dynamics',
-    'Energy-efficient robotic workcells',
-    'Medical and rehabilitation robotics',
-    'Mechanical behavior analysis',
   ],
   education: [
     {
       institution: 'Hiroshima University',
       degree: 'Doctoral Student',
-      field: 'Robotics and Automation',
-      startYear: '2024',
+      field: 'Informatics and Data Science Program',
+      startYear: '2025',
       endYear: 'present',
     },
     {
