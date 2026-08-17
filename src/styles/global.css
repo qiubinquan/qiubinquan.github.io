@@ -243,11 +243,6 @@ p {
   margin-top: 8px;
 }
 
-.publication-list li {
-  display: grid;
-  gap: 4px;
-}
-
 .tag-list,
 .contact-list {
   display: flex;
