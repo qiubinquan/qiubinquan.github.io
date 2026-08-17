@@ -40,6 +40,22 @@ import { profile } from '../data/profile';
         }
       </section>
       <section>
+        <h2>Education</h2>
+        {
+          profile.education.length > 0 ? (
+            <ul>
+              {profile.education.map((item) => (
+                <li>
+                  {item.degree}, {item.field}, {item.institution} ({item.startYear}-{item.endYear})
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>To be added.</p>
+          )
+        }
+      </section>
+      <section>
         <h2>Skills</h2>
         {
           profile.skills.length > 0 ? (
