@@ -4,10 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { pageMetadata } from '../config/seo';
 import { externalLinks } from '../config/site';
 
-const links = Object.entries(externalLinks).filter(([, value]) => value);
-const labels: Record<string, string> = {
-  email: externalLinks.email.replace('mailto:', ''),
-};
+const email = externalLinks.email.replace('mailto:', '');
 ---
 
 <BaseLayout
@@ -23,11 +20,9 @@ const labels: Record<string, string> = {
     />
 
     {
-      links.length > 0 ? (
+      email ? (
         <ul class="contact-list">
-          {links.map(([label, href]) => (
-            <li><a href={href as string}>{labels[label] || label}</a></li>
-          ))}
+          <li><a href={externalLinks.email}>{email}</a></li>
         </ul>
       ) : (
         <p class="reserved-note">No public contact links are listed yet.</p>

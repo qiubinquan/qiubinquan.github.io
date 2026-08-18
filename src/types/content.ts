@@ -41,6 +41,7 @@ export interface ExternalLinks {
   googleScholar: string;
   linkedin: string;
   orcid: string;
+  cssLab: string;
   cv: string;
 }
 

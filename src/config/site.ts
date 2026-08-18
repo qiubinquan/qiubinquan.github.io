@@ -16,5 +16,6 @@ export const externalLinks: ExternalLinks = {
   googleScholar: '',
   linkedin: '',
   orcid: 'https://orcid.org/0009-0000-3810-4962',
+  cssLab: 'https://csslab.jp/en/',
   cv: '',
 };

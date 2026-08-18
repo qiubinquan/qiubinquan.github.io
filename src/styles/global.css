@@ -192,14 +192,22 @@ p {
   margin: 0 8px;
 }
 
-.profile-meta .affiliation-lines {
+.affiliation-lines {
   display: grid;
   gap: 2px;
 }
 
-.profile-meta .affiliation-lines span {
+.affiliation-lines span {
   color: var(--color-muted);
   margin: 0;
+}
+
+.affiliation-lines a {
+  font-weight: 700;
+}
+
+.affiliation-lines a + a {
+  margin-left: 0.25em;
 }
 
 .photo-placeholder {
