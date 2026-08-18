@@ -69,10 +69,7 @@ import { profile } from '../data/profile';
                 const [award, ...details] = item.split(', ');
                 const shouldEmphasize = !item.endsWith('2017') && !item.endsWith('2016');
                 return (
-                  <li>
-                    {shouldEmphasize ? <strong>{award}</strong> : award}
-                    {details.length > 0 ? `, ${details.join(', ')}` : ''}
-                  </li>
+                  <li>{shouldEmphasize ? <strong>{award}</strong> : award}{details.length > 0 ? `, ${details.join(', ')}` : ''}</li>
                 );
               })}
             </ul>

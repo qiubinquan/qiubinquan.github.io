@@ -38,12 +38,10 @@ const splitHighlightedAuthor = (authors: string) => {
         <ol class="publication-list">
           {profile.publications.map((publication) => {
             const authors = splitHighlightedAuthor(publication.authors);
+            const authorSuffix = publication.authors.trim().endsWith('.') ? '' : '.';
             return (
               <li>
-                {authors.match ? (
-                  <>{authors.before}<strong>{authors.match}</strong>{authors.after}</>
-                ) : publication.authors}
-                {' '}"{publication.title}." <em>{publication.venue}</em>, {publication.year}.
+                {authors.match ? <>{authors.before}<strong>{authors.match}</strong>{authors.after}</> : publication.authors}{authorSuffix} "{publication.title}." <em>{publication.venue}</em>, {publication.year}.
               </li>
             );
           })}
