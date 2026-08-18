@@ -198,18 +198,22 @@ p {
 }
 
 .affiliation-lines span {
-  color: var(--color-text);
+  color: var(--color-muted);
   margin: 0;
 }
 
 .profile-meta .affiliation-lines span {
-  color: var(--color-text);
+  color: var(--color-muted);
   margin: 0;
 }
 
 .affiliation-lines a {
-  color: var(--color-text);
+  color: inherit;
   font-weight: 700;
+}
+
+.affiliation-lines a:hover {
+  color: var(--color-accent);
 }
 
 .photo-placeholder {
