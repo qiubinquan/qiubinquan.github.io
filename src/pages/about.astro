@@ -31,9 +31,7 @@ import { profile } from '../data/profile';
         <h2>Research Interests</h2>
         {
           profile.interests.length > 0 ? (
-            <ul class="inline-list">
-              {profile.interests.map((item) => <li>{item}</li>)}
-            </ul>
+            <p>{profile.interests.join(', ')}</p>
           ) : (
             <p>To be added.</p>
           )

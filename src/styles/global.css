@@ -224,6 +224,7 @@ p {
   color: var(--color-muted);
   display: grid;
   justify-items: center;
+  margin-top: calc(clamp(1.55rem, 3.6vw, 2.8rem) * 1.12 + 28px);
   min-height: 300px;
 }
 
@@ -379,14 +380,6 @@ p {
   max-width: none;
 }
 
-.inline-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 1.2em;
-  list-style: none;
-  padding-left: 0;
-}
-
 .timeline-item li,
 .publication-list li,
 .info-grid li {
@@ -490,6 +483,7 @@ p {
 
   .photo-placeholder {
     aspect-ratio: 16 / 10;
+    margin-top: 0;
     min-height: 220px;
     width: 100%;
   }
