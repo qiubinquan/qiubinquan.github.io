@@ -146,34 +146,6 @@ p {
   margin: 18px 0 0;
 }
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.button {
-  align-items: center;
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  display: inline-flex;
-  font-weight: 700;
-  min-height: 44px;
-  padding: 0 18px;
-  text-decoration: none;
-}
-
-.button.primary {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: #ffffff;
-}
-
-.button.primary:hover {
-  background: var(--color-accent-strong);
-  color: #ffffff;
-}
-
 .content-band,
 .page-section {
   border-top: 1px solid var(--color-border);
