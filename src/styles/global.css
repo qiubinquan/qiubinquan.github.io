@@ -217,11 +217,11 @@ p {
 }
 
 .profile-photo {
+  align-self: center;
   aspect-ratio: 1;
   background: color-mix(in srgb, var(--color-surface) 76%, transparent);
   border: 1px solid var(--color-border);
   display: block;
-  margin-top: calc(clamp(1.55rem, 3.6vw, 2.8rem) * 1.12 + 28px + 6.1rem);
   min-height: 300px;
   overflow: hidden;
 }
@@ -373,7 +373,7 @@ p {
   color: var(--color-muted);
   display: flex;
   flex-wrap: wrap;
-  font-size: 1rem;
+  font-size: 1.06rem;
   font-weight: 700;
   gap: 0.35em;
   line-height: 1.7;
