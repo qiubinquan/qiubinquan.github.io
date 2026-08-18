@@ -3,6 +3,21 @@ import SectionHeading from '../../components/SectionHeading.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { pageMetadata } from '../../config/seo';
 import { profile } from '../../data/profile';
+
+const highlightedAuthor = 'Qiu, Binquan';
+
+const splitHighlightedAuthor = (authors: string) => {
+  const index = authors.indexOf(highlightedAuthor);
+  if (index === -1) {
+    return { before: authors, match: '', after: '' };
+  }
+
+  return {
+    before: authors.slice(0, index),
+    match: highlightedAuthor,
+    after: authors.slice(index + highlightedAuthor.length),
+  };
+};
 ---
 
 <BaseLayout
@@ -21,11 +36,17 @@ import { profile } from '../../data/profile';
       <section>
         <h2>Papers</h2>
         <ol class="publication-list">
-          {profile.publications.map((publication) => (
-            <li>
-              {publication.authors} "{publication.title}." <em>{publication.venue}</em>, {publication.year}.
-            </li>
-          ))}
+          {profile.publications.map((publication) => {
+            const authors = splitHighlightedAuthor(publication.authors);
+            return (
+              <li>
+                {authors.match ? (
+                  <>{authors.before}<strong>{authors.match}</strong>{authors.after}</>
+                ) : publication.authors}
+                {' '}"{publication.title}." <em>{publication.venue}</em>, {publication.year}.
+              </li>
+            );
+          })}
         </ol>
       </section>
 

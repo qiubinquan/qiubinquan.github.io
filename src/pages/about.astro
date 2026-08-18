@@ -67,7 +67,13 @@ import { profile } from '../data/profile';
             <ul>
               {profile.awards.map((item) => {
                 const [award, ...details] = item.split(', ');
-                return <li><strong>{award}</strong>{details.length > 0 ? `, ${details.join(', ')}` : ''}</li>;
+                const shouldEmphasize = !item.endsWith('2017') && !item.endsWith('2016');
+                return (
+                  <li>
+                    {shouldEmphasize ? <strong>{award}</strong> : award}
+                    {details.length > 0 ? `, ${details.join(', ')}` : ''}
+                  </li>
+                );
               })}
             </ul>
           ) : (

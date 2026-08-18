@@ -149,7 +149,7 @@ export const profile: Profile = {
     'CN206535398U',
   ],
   awards: [
-    "SPRING fellow, Program for Developing and Supporting the Next-Generation of Innovative Researchers at Hiroshima University, 2025",
+    'SPRING fellow, Hiroshima University, 2025',
     'Outstanding employee, Chengdu Aixam Medical Technology Co. Ltd., 2024',
     'Merit student, Ningbo Institute of Materials Technology and Engineering, 2022',
     'First prize scholarship, Jiangxi University of Science and Technology, 2022',
