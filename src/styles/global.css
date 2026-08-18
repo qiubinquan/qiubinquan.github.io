@@ -137,6 +137,8 @@ h3 {
 p {
   color: var(--color-muted);
   line-height: 1.7;
+  text-align: justify;
+  text-align-last: left;
 }
 
 .section-heading p {
@@ -235,6 +237,13 @@ p {
   color: var(--color-muted);
   line-height: 1.7;
   padding-left: 1.25rem;
+}
+
+.timeline-item li,
+.publication-list li,
+.info-grid li {
+  text-align: justify;
+  text-align-last: left;
 }
 
 .publication-list li + li,
