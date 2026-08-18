@@ -1,32 +1,19 @@
 ---
-import SectionHeading from '../components/SectionHeading.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { pageMetadata } from '../config/seo';
-import { externalLinks } from '../config/site';
-
-const email = externalLinks.email.replace('mailto:', '');
 ---
 
 <BaseLayout
   title={pageMetadata.contact.title}
   description={pageMetadata.contact.description}
   path={pageMetadata.contact.path}
-  currentSection="contact"
+  currentSection="news"
 >
   <section class="page-section">
-    <SectionHeading
-      eyebrow="Contact"
-      title="Contact"
-    />
-
-    {
-      email ? (
-        <ul class="contact-list">
-          <li><a href={externalLinks.email}>{email}</a></li>
-        </ul>
-      ) : (
-        <p class="reserved-note">No public contact links are listed yet.</p>
-      )
-    }
+    <h1>News</h1>
+    <p><a href="/news/">Open News</a></p>
   </section>
+  <script is:inline>
+    window.location.replace('/news/');
+  </script>
 </BaseLayout>

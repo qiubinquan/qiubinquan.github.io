@@ -381,8 +381,7 @@ p {
   margin-top: 8px;
 }
 
-.tag-list,
-.contact-list {
+.tag-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;

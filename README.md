@@ -14,7 +14,7 @@ Current public sections:
 - About
 - Project Experience
 - Publications
-- Contact
+- News
 
 The Project Experience section presents approved public project and engineering experience.
 

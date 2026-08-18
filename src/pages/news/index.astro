@@ -1,0 +1,21 @@
+---
+import SectionHeading from '../../components/SectionHeading.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { pageMetadata } from '../../config/seo';
+---
+
+<BaseLayout
+  title={pageMetadata.news.title}
+  description={pageMetadata.news.description}
+  path={pageMetadata.news.path}
+  currentSection="news"
+>
+  <section class="page-section">
+    <SectionHeading
+      eyebrow="Updates"
+      title="News"
+    />
+
+    <p class="reserved-note">No news has been posted yet.</p>
+  </section>
+</BaseLayout>

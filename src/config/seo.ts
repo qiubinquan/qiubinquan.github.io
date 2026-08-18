@@ -36,8 +36,13 @@ export const pageMetadata = {
     path: '/publications/',
   },
   contact: {
-    title: 'Contact',
-    description: `Contact ${site.name}.`,
+    title: 'News',
+    description: `Redirect to news by ${site.name}.`,
     path: '/contact/',
+  },
+  news: {
+    title: 'News',
+    description: `Latest news by ${site.name}.`,
+    path: '/news/',
   },
 } as const;

@@ -10,7 +10,7 @@ Visible sections:
 - About
 - Project Experience
 - Publications
-- Contact
+- News
 
 Reserved for future expansion:
 

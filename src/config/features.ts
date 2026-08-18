@@ -6,7 +6,7 @@ export const features: FeatureFlags = {
   writing: true,
   team: false,
   publications: false,
-  news: false,
+  news: true,
   resources: false,
   multilingual: false,
   analytics: false,
