@@ -3,7 +3,7 @@ import type { NewsItem } from '../types/content';
 export const newsItems: NewsItem[] = [
   {
     date: '2026 May',
-    text: 'I gave research presentations at the JpGU-AGU Joint Meeting 2026, held from May 27 to May 30 at Makuhari Messe, Chiba.',
+    text: 'I gave a research presentation at the JpGU-AGU Joint Meeting 2026, held from May 27 to May 30 at Makuhari Messe, Chiba.',
   },
   {
     date: '2025 Oct.',
