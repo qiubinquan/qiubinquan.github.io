@@ -4,7 +4,7 @@ Astro-based personal academic website for Qiu Binquan.
 
 https://qiubinquan.github.io/
 
-This repository contains the first version of a small static personal academic site. It is designed to be easy to maintain, safe to publish, and simple to extend later.
+This repository contains the source code and public assets for Qiu Binquan's personal academic website.
 
 ## Overview
 
@@ -20,19 +20,9 @@ The Project Experience section presents approved public project and engineering 
 
 ## Documentation
 
-Detailed project documentation is in:
+Project documentation is maintained separately:
 
 - [Project Guide](docs/PROJECT_GUIDE.md)
-
-The guide covers:
-
-- Project structure
-- Folder responsibilities
-- Content management
-- Privacy rules
-- Deployment
-- Naming conventions
-- Future extension notes
 
 ## Tech Stack
 
@@ -43,38 +33,6 @@ The guide covers:
 - GitHub Actions
 - pnpm
 
-## Development
+## Rights
 
-Install dependencies:
-
-```sh
-pnpm install
-```
-
-Run the local development server:
-
-```sh
-pnpm run dev
-```
-
-Build for production:
-
-```sh
-pnpm run build
-```
-
-Preview the production build:
-
-```sh
-pnpm run preview
-```
-
-The build command runs:
-
-```sh
-astro check && astro build
-```
-
-## Deployment
-
-Pushes to `main` are deployed through GitHub Actions. See [Project Guide](docs/PROJECT_GUIDE.md#deployment) for the full workflow details.
+All website content, images, and source code are copyright Qiu Binquan. No permission is granted to copy, redistribute, modify, or reuse this repository, its assets, or its content without prior written permission.
