@@ -349,8 +349,23 @@ p {
 .card-meta,
 .article-meta {
   color: var(--color-warm);
-  font-size: 0.98rem;
+  font-size: 1.08rem;
   margin: 8px 0;
+}
+
+.project-title-line {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em;
+  line-height: 1.25;
+}
+
+.project-title-line span + span::before {
+  color: var(--color-muted);
+  content: "/";
+  font-weight: 400;
+  margin-right: 0.35em;
 }
 
 .timeline-list {

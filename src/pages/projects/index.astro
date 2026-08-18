@@ -27,8 +27,10 @@ const projects = [...profile.projectExperience, ...profile.workExperience].sort(
           <p class="article-meta">
             {project.startYear}-{project.endYear} · {project.location}
           </p>
-          <h2>{project.title}</h2>
-          <p><strong>{project.organization}</strong></p>
+          <h2 class="project-title-line">
+            <span>{project.title}</span>
+            <span>{project.organization}</span>
+          </h2>
           <p>{project.summary}</p>
           <ul>
             {project.highlights.map((highlight) => <li>{highlight}</li>)}

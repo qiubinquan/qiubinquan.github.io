@@ -2,7 +2,6 @@
 import SectionHeading from '../components/SectionHeading.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { pageMetadata } from '../config/seo';
-import { externalLinks } from '../config/site';
 import { profile } from '../data/profile';
 ---
 
@@ -19,14 +18,6 @@ import { profile } from '../data/profile';
     />
 
     <div class="info-grid">
-      <section>
-        <h2>Affiliation</h2>
-        <p class="affiliation-lines">
-          <span><a href={externalLinks.cssLab}>Complex Systems Science Laboratory</a></span>
-          <span>Graduate School of Advanced Science and Engineering</span>
-          <span>Hiroshima University</span>
-        </p>
-      </section>
       <section>
         <h2>Research Interests</h2>
         {
