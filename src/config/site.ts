@@ -12,9 +12,9 @@ export const site: SiteIdentity = {
 
 export const externalLinks: ExternalLinks = {
   email: 'mailto:qiubinquan2014@outlook.com',
-  github: '',
+  github: 'https://github.com/qiubinquan',
   googleScholar: '',
   linkedin: '',
-  orcid: '',
+  orcid: 'https://orcid.org/0009-0000-3810-4962',
   cv: '',
 };

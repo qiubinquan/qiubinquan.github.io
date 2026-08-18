@@ -1,12 +1,20 @@
 ---
-import SectionHeading from '../components/SectionHeading.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { pageMetadata } from '../config/seo';
+import { externalLinks } from '../config/site';
 import { profile } from '../data/profile';
 
 const bio = profile.bio
   ? profile.bio.split('\n\n')
   : ['Personal academic website for notes, selected writing, and future public work.'];
+
+const location = 'Hiroshima, Japan';
+
+const galleryItems = [
+  'Gallery item 1',
+  'Gallery item 2',
+  'Gallery item 3',
+];
 ---
 
 <BaseLayout
@@ -15,30 +23,74 @@ const bio = profile.bio
   path={pageMetadata.home.path}
   currentSection="home"
 >
-  <section class="hero">
-    <SectionHeading
-      eyebrow={profile.role}
-      title={profile.name}
-      description={bio}
-    />
-  </section>
+  <section class="home-profile">
+    <div class="profile-summary">
+      <h1>{profile.name}</h1>
+      <dl class="profile-meta">
+        <div>
+          <dt>Affiliation</dt>
+          <dd>{profile.affiliation}</dd>
+        </div>
+        <div>
+          <dt>Position</dt>
+          <dd>{profile.role}</dd>
+        </div>
+        <div>
+          <dt>Location</dt>
+          <dd>{location}</dd>
+        </div>
+        <div>
+          <dt>Links</dt>
+          <dd>
+            <a href={externalLinks.github}>GitHub</a>
+            <span aria-hidden="true">/</span>
+            <a href={externalLinks.orcid}>ORCID</a>
+          </dd>
+        </div>
+      </dl>
+    </div>
 
-  <section class="content-band">
-    <div class="two-column">
-      <div>
-        <h2>Current Focus</h2>
-        <p>
-          This site is prepared as a quiet, maintainable academic home for profile, projects,
-          publications, patents, and professional contact.
-        </p>
-      </div>
-      <div>
-        <h2>Site Scope</h2>
-        <p>
-          The first version includes About, Projects, Publications, and Contact. Team-oriented sections
-          are reserved in the codebase for later expansion.
-        </p>
-      </div>
+    <div class="photo-placeholder" aria-label="Photo placeholder">
+      <span>Photo</span>
     </div>
   </section>
+
+  <section class="home-bio" aria-label="Biography">
+    {bio.map((paragraph) => <p>{paragraph}</p>)}
+  </section>
+
+  <section class="home-gallery" aria-label="Gallery">
+    <div class="gallery-heading">
+      <h2>Gallery</h2>
+      <div class="gallery-controls">
+        <button type="button" aria-label="Previous gallery item" data-gallery-prev>&lt;</button>
+        <button type="button" aria-label="Next gallery item" data-gallery-next>&gt;</button>
+      </div>
+    </div>
+
+    <div class="gallery-track" data-gallery-track tabindex="0" aria-label="Gallery placeholders">
+      {galleryItems.map((item) => (
+        <div class="gallery-item">
+          <span>{item}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <script is:inline>
+    const galleryTrack = document.querySelector('[data-gallery-track]');
+    const previousButton = document.querySelector('[data-gallery-prev]');
+    const nextButton = document.querySelector('[data-gallery-next]');
+
+    if (galleryTrack && previousButton && nextButton) {
+      const scrollGallery = (direction) => {
+        const item = galleryTrack.querySelector('.gallery-item');
+        const distance = item ? item.getBoundingClientRect().width + 18 : galleryTrack.clientWidth;
+        galleryTrack.scrollBy({ left: direction * distance, behavior: 'smooth' });
+      };
+
+      previousButton.addEventListener('click', () => scrollGallery(-1));
+      nextButton.addEventListener('click', () => scrollGallery(1));
+    }
+  </script>
 </BaseLayout>
