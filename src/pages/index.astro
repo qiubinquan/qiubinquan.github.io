@@ -3,6 +3,10 @@ import SectionHeading from '../components/SectionHeading.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { pageMetadata } from '../config/seo';
 import { profile } from '../data/profile';
+
+const bio = profile.bio
+  ? profile.bio.split('\n\n')
+  : ['Personal academic website for notes, selected writing, and future public work.'];
 ---
 
 <BaseLayout
@@ -15,7 +19,7 @@ import { profile } from '../data/profile';
     <SectionHeading
       eyebrow={profile.role}
       title={profile.name}
-      description={profile.bio || 'Personal academic website for notes, selected writing, and future public work.'}
+      description={bio}
     />
     <div class="hero-actions">
       <a class="button" href="/publications/">Publications</a>

@@ -5,7 +5,7 @@ export const profile: Profile = {
   role: 'Doctoral Student in Informatics and Data Science',
   affiliation: 'Graduate School of Advanced Science and Engineering, Hiroshima University',
   location: '',
-  bio: 'Qiu Binquan is a doctoral student at Hiroshima University working across robotics, automation, motion control, and mechanical engineering. His experience includes industrial robot workcell optimization, medical robotics, lower-limb exoskeletons, and pipeline mechanical behavior analysis.',
+  bio: 'Qiu Binquan is a doctoral student in the Informatics and Data Science Program at Hiroshima University. His current research focuses on complex systems, including multi-agent system control and interventions in weather systems.\n\nHe has worked on robotic-arm modeling and planning, participated in the development of robotic devices such as lower-limb exoskeletons and blood-drawing robots, and brings embedded application experience together with a mechanical engineering background.',
   interests: [
     'Robotics and automation',
     'Motion control',
