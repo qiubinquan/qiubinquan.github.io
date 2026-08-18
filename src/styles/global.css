@@ -202,6 +202,11 @@ p {
   margin: 0;
 }
 
+.profile-meta .affiliation-lines span {
+  color: var(--color-text);
+  margin: 0;
+}
+
 .affiliation-lines a {
   color: var(--color-text);
   font-weight: 700;
