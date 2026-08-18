@@ -41,7 +41,7 @@ import { profile } from '../data/profile';
             <ul>
               {profile.education.map((item) => (
                 <li>
-                  {item.degree}, {item.field}, {item.institution} ({item.startYear}-{item.endYear})
+                  {item.degree}{item.field ? ` in ${item.field}` : ''}, {item.institution}, {item.startYear}-{item.endYear}
                 </li>
               ))}
             </ul>

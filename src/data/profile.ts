@@ -13,28 +13,28 @@ export const profile: Profile = {
   education: [
     {
       institution: 'Hiroshima University',
-      degree: 'Doctoral Student',
+      degree: 'Ph.D. Student',
       field: 'Informatics and Data Science Program',
       startYear: '2025',
       endYear: 'present',
     },
     {
       institution: 'Jiangxi University of Science and Technology',
-      degree: 'Master',
+      degree: 'M.Eng.',
       field: 'Mechanical Engineering',
       startYear: '2019',
       endYear: '2022',
     },
     {
       institution: 'Ningbo Institute of Materials Technology and Engineering, Chinese Academy of Sciences',
-      degree: 'Joint Education Program',
-      field: 'Master-level research training',
+      degree: "Joint Master's Training",
+      field: '',
       startYear: '2020',
       endYear: '2022',
     },
     {
       institution: 'Southwest Petroleum University',
-      degree: 'Bachelor',
+      degree: 'B.Eng.',
       field: 'Process Equipment and Control Engineering',
       startYear: '2014',
       endYear: '2018',
