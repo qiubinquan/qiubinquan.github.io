@@ -12,11 +12,11 @@ Current public sections:
 
 - Home
 - About
-- Projects
-- Writing
+- Project Experience
+- Publications
 - Contact
 
-The Projects section is intentionally reserved and does not publish project details in v1.
+The Project Experience section presents approved public project and engineering experience.
 
 ## Documentation
 

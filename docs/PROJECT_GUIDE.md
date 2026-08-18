@@ -8,8 +8,8 @@ Visible sections:
 
 - Home
 - About
-- Projects
-- Writing
+- Project Experience
+- Publications
 - Contact
 
 Reserved for future expansion:
@@ -20,7 +20,7 @@ Reserved for future expansion:
 - Resources
 - Multilingual content
 
-The Projects section is reserved in this version. It must not publish project details, internal screenshots, lab or advisor work, unpublished data, or unauthorized material.
+The Project Experience section presents approved public project and engineering experience. Internal screenshots, unpublished data, lab or advisor work, and unauthorized material must still be excluded.
 
 ## Tech Stack
 
@@ -228,7 +228,7 @@ research-note-urban-traffic
 technical-note-astro-site
 ```
 
-### Projects
+### Project Experience
 
 Edit:
 
@@ -236,13 +236,13 @@ Edit:
 src/data/projects.ts
 ```
 
-This file exists for future use, but the Projects page is hard-coded as reserved in v1. Do not add public project rendering until the project material is approved for publication.
+This file exists for future structured project content. The current Project Experience page renders approved experience from the profile data.
 
 ## Privacy Rules
 
 Do not publish:
 
-- Non-public projects
+- Non-public project experience
 - Advisor, lab, or team work without permission
 - Internal screenshots
 - Raw or unpublished research data
@@ -339,7 +339,7 @@ Recommended future additions:
 - Decide whether long-form writing should move from TypeScript data to Astro content collections.
 - Add an Open Graph image if social sharing previews become important.
 - Add Publications only after there is public, approved publication metadata.
-- Add Projects rendering only after public project content is explicitly approved.
+- Add detailed Project Experience rendering only after public project content is explicitly approved.
 - Add multilingual support only after the English version is stable.
 
 Avoid adding a backend, database, search system, analytics, or comment system unless there is a clear need.

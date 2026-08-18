@@ -7,7 +7,7 @@ export const primaryNavigation: NavigationItem[] = [
     section: 'about',
   },
   {
-    label: 'Projects',
+    label: 'Project Experience',
     href: '/projects/',
     section: 'projects',
   },

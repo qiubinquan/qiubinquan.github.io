@@ -21,7 +21,7 @@ export const pageMetadata = {
     path: '/about/',
   },
   projects: {
-    title: 'Projects',
+    title: 'Project Experience',
     description: `Selected project experience by ${site.name}.`,
     path: '/projects/',
   },
