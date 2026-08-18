@@ -3,9 +3,9 @@ import type { FeatureFlags } from '../types/content';
 export const features: FeatureFlags = {
   projects: true,
   projectDetailPages: false,
-  writing: true,
+  writing: false,
   team: false,
-  publications: false,
+  publications: true,
   news: true,
   resources: false,
   multilingual: false,

@@ -2,7 +2,7 @@ import type { ContentRegistry } from '../types/content';
 
 export const contentRegistry: ContentRegistry = {
   projects: {
-    status: 'reserved',
+    status: 'published',
     listPath: '/projects/',
     detailPathPattern: null,
   },
@@ -22,9 +22,9 @@ export const contentRegistry: ContentRegistry = {
     detailPathPattern: null,
   },
   news: {
-    status: 'reserved',
+    status: 'published',
     listPath: '/news/',
-    detailPathPattern: '/news/:slug/',
+    detailPathPattern: null,
   },
 };
 
