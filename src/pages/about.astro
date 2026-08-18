@@ -35,7 +35,7 @@ import { profile } from '../data/profile';
             <ul>
               {profile.education.map((item) => (
                 <li>
-                  {item.degree}{item.field ? ` in ${item.field}` : ''}, {item.institution}, {item.startYear}-{item.endYear}
+                  <strong>{item.degree}</strong>{item.field ? ` in ${item.field}` : ''}, {item.institution}, {item.startYear}-{item.endYear}
                 </li>
               ))}
             </ul>
@@ -51,7 +51,7 @@ import { profile } from '../data/profile';
             <ul>
               {profile.workExperience.map((item) => (
                 <li>
-                  {item.title}, {item.organization} ({item.startYear}-{item.endYear})
+                  <strong>{item.title}</strong>, {item.organization} ({item.startYear}-{item.endYear})
                 </li>
               ))}
             </ul>
@@ -65,7 +65,10 @@ import { profile } from '../data/profile';
         {
           profile.awards.length > 0 ? (
             <ul>
-              {profile.awards.map((item) => <li>{item}</li>)}
+              {profile.awards.map((item) => {
+                const [award, ...details] = item.split(', ');
+                return <li><strong>{award}</strong>{details.length > 0 ? `, ${details.join(', ')}` : ''}</li>;
+              })}
             </ul>
           ) : (
             <p>To be added.</p>

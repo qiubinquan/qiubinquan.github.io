@@ -5,7 +5,7 @@ export const profile: Profile = {
   role: 'Doctoral Student in Informatics and Data Science',
   affiliation: 'Graduate School of Advanced Science and Engineering, Hiroshima University',
   location: '',
-  bio: 'Qiu Binquan is a doctoral student in the Informatics and Data Science Program at Hiroshima University. His current research focuses on complex systems, including multi-agent system control and interventions in weather systems.\n\nHe has worked on robotic-arm modeling and planning, participated in the development of robotic devices such as lower-limb exoskeletons and blood-drawing robots, and brings embedded application experience together with a mechanical engineering background.',
+  bio: 'I am a doctoral student in the Informatics and Data Science Program at Hiroshima University. My current research focuses on complex systems, including multi-agent system control and interventions in weather systems.\n\nI have worked on robotic-arm modeling and planning, participated in the development of robotic devices such as lower-limb exoskeletons and blood-drawing robots, and bring embedded application experience together with a mechanical engineering background.',
   interests: [
     'Robotics',
     'Multi-agent systems',
@@ -28,7 +28,7 @@ export const profile: Profile = {
     },
     {
       institution: 'Ningbo Institute of Materials Technology and Engineering, Chinese Academy of Sciences',
-      degree: "Joint Master's Training",
+      degree: "Joint Master's Program",
       field: '',
       startYear: '2020',
       endYear: '2022',
@@ -149,6 +149,7 @@ export const profile: Profile = {
     'CN206535398U',
   ],
   awards: [
+    "SPRING fellow, Program for Developing and Supporting the Next-Generation of Innovative Researchers at Hiroshima University, 2025",
     'Outstanding employee, Chengdu Aixam Medical Technology Co. Ltd., 2024',
     'Merit student, Ningbo Institute of Materials Technology and Engineering, 2022',
     'First prize scholarship, Jiangxi University of Science and Technology, 2022',
