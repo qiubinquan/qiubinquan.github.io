@@ -206,10 +206,6 @@ p {
   font-weight: 700;
 }
 
-.affiliation-lines a + a {
-  margin-left: 0.25em;
-}
-
 .photo-placeholder {
   align-items: center;
   aspect-ratio: 4 / 5;
