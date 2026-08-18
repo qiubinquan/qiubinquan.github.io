@@ -198,11 +198,12 @@ p {
 }
 
 .affiliation-lines span {
-  color: var(--color-muted);
+  color: var(--color-text);
   margin: 0;
 }
 
 .affiliation-lines a {
+  color: var(--color-text);
   font-weight: 700;
 }
 
