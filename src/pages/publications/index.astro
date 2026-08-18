@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { pageMetadata } from '../../config/seo';
 import { profile } from '../../data/profile';
 
-const highlightedAuthor = 'Qiu, Binquan';
+const highlightedAuthor = 'Qiu, B.';
 
 const splitHighlightedAuthor = (authors: string) => {
   const index = authors.indexOf(highlightedAuthor);
@@ -17,6 +17,11 @@ const splitHighlightedAuthor = (authors: string) => {
     match: highlightedAuthor,
     after: authors.slice(index + highlightedAuthor.length),
   };
+};
+
+const formatVolumeIssue = (volume?: string, issue?: string) => {
+  if (!volume) return '';
+  return issue ? `${volume}(${issue})` : volume;
 };
 ---
 
@@ -38,10 +43,20 @@ const splitHighlightedAuthor = (authors: string) => {
         <ol class="publication-list">
           {profile.publications.map((publication) => {
             const authors = splitHighlightedAuthor(publication.authors);
-            const authorSuffix = publication.authors.trim().endsWith('.') ? '' : '.';
+            const volumeIssue = formatVolumeIssue(publication.volume, publication.issue);
             return (
               <li>
-                {authors.match ? <>{authors.before}<strong>{authors.match}</strong>{authors.after}</> : publication.authors}{authorSuffix} "{publication.title}." <em>{publication.venue}</em>, {publication.year}.
+                {authors.match ? <>{authors.before}<strong>{authors.match}</strong>{authors.after}</> : publication.authors} ({publication.year}). {publication.title}.{' '}
+                {publication.type === 'conference' ? (
+                  <>
+                    In <em>{publication.venue}</em>{publication.location ? `, ${publication.location}` : ''}{publication.pages ? `, pp. ${publication.pages}` : ''}.
+                  </>
+                ) : (
+                  <>
+                    <em>{publication.venue}</em>{volumeIssue ? `, ${volumeIssue}` : ''}{publication.pages ? `, ${publication.pages}` : ''}.
+                  </>
+                )}
+                {publication.doi ? <> <a href={`https://doi.org/${publication.doi}`}>https://doi.org/{publication.doi}</a></> : null}
               </li>
             );
           })}

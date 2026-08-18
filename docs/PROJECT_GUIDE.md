@@ -15,8 +15,6 @@ Visible sections:
 Reserved for future expansion:
 
 - Members
-- Publications
-- News
 - Resources
 - Multilingual content
 
@@ -40,21 +38,26 @@ Public routes:
 - `/`
 - `/about/`
 - `/projects/`
-- `/writing/`
-- `/contact/`
+- `/publications/`
+- `/news/`
+
+Compatibility redirects:
+
+- `/project/` redirects to `/projects/`
+- `/writing/` redirects to `/publications/`
+- `/writting/` redirects to `/publications/`
+- `/contact/` redirects to `/news/`
 
 Reserved dynamic route:
 
 - `/writing/:slug/`
 
-Writing detail pages are generated only for entries whose `status` is `published`.
+Writing detail pages are reserved for future expansion and are generated only for entries whose `status` is `published`.
 
 Not available in the first version:
 
 - `/projects/:slug/`
 - `/members/`
-- `/publications/`
-- `/news/`
 - `/resources/`
 
 ## Project Structure
@@ -62,7 +65,11 @@ Not available in the first version:
 ```text
 .
 ├─ public/
-│  └─ favicon.svg
+│  ├─ favicon.svg
+│  └─ images/
+│     ├─ gallery/
+│     ├─ profile/
+│     └─ og-default.webp
 ├─ src/
 │  ├─ components/
 │  │  ├─ BackLink.astro
@@ -87,10 +94,18 @@ Not available in the first version:
 │  │  ├─ about.astro
 │  │  ├─ contact.astro
 │  │  ├─ index.astro
+│  │  ├─ news/
+│  │  │  └─ index.astro
+│  │  ├─ project/
+│  │  │  └─ index.astro
 │  │  ├─ projects/
 │  │  │  └─ index.astro
-│  │  └─ writing/
-│  │     ├─ [slug].astro
+│  │  ├─ publications/
+│  │  │  └─ index.astro
+│  │  ├─ writing/
+│  │  │  ├─ [slug].astro
+│  │  │  └─ index.astro
+│  │  └─ writting/
 │  │     └─ index.astro
 │  ├─ styles/
 │  │  └─ global.css
@@ -110,7 +125,7 @@ Not available in the first version:
 
 `public/`
 
-Static assets that are served from the site root. Current asset: favicon.
+Static assets served from the site root, including the favicon, profile photo, gallery images, and social preview image.
 
 `src/components/`
 
@@ -118,9 +133,9 @@ Reusable UI components.
 
 - `Header.astro`: site title and primary navigation, loaded from `src/config/navigation.ts`.
 - `Footer.astro`: copyright and optional external links, loaded from `src/config/site.ts`.
-- `PageCard.astro`: reusable card for list pages, currently used by Writing.
+- `PageCard.astro`: reusable card for future list pages.
 - `Breadcrumb.astro`: page hierarchy for writing detail pages.
-- `BackLink.astro`: explicit return links such as "Back to Writing".
+- `BackLink.astro`: explicit return links for future detail pages.
 - `SectionHeading.astro`: shared page and section headings.
 
 `src/config/`
@@ -137,9 +152,9 @@ Site-level configuration. Prefer changing these files instead of hard-coding sit
 
 Content data for the site.
 
-- `profile.ts`: personal profile fields used by Home and About.
+- `profile.ts`: personal profile, education, experience, publications, patents, awards, and skills.
 - `projects.ts`: intentionally empty in v1.
-- `writing.ts`: writing metadata. Only `published` entries are listed and built.
+- `writing.ts`: reserved writing metadata. Only `published` entries are built.
 
 `src/layouts/`
 
@@ -182,6 +197,11 @@ Fields:
 - `bio`
 - `interests`
 - `education`
+- `projectExperience`
+- `workExperience`
+- `publications`
+- `patents`
+- `awards`
 - `skills`
 
 Keep private or sensitive personal details out of this file unless they are intended to be public.
@@ -212,7 +232,7 @@ Only entries with:
 status: 'published'
 ```
 
-are shown on `/writing/` and generated as `/writing/:slug/`.
+are generated as `/writing/:slug/`. The public `/writing/` route currently redirects to `/publications/`.
 
 Entries with these statuses are not published:
 
@@ -233,10 +253,32 @@ technical-note-astro-site
 Edit:
 
 ```text
-src/data/projects.ts
+src/data/profile.ts
 ```
 
-This file exists for future structured project content. The current Project Experience page renders approved experience from the profile data.
+The current Project Experience page renders approved research and engineering experience from `projectExperience` and `workExperience` in the profile data. The separate `src/data/projects.ts` file is reserved for future structured project content.
+
+### Static Images
+
+Profile photo:
+
+```text
+public/images/profile/
+```
+
+Gallery images:
+
+```text
+public/images/gallery/
+```
+
+Social preview image:
+
+```text
+public/images/og-default.webp
+```
+
+Use lowercase file names with hyphens. Compress public images for web use and remove EXIF metadata before publishing.
 
 ## Privacy Rules
 
@@ -335,10 +377,8 @@ Examples:
 
 Recommended future additions:
 
-- Add real profile content in `src/data/profile.ts`.
 - Decide whether long-form writing should move from TypeScript data to Astro content collections.
-- Add an Open Graph image if social sharing previews become important.
-- Add Publications only after there is public, approved publication metadata.
+- Add DOI, volume, issue, and page information to publication records whenever verified details are available.
 - Add detailed Project Experience rendering only after public project content is explicitly approved.
 - Add multilingual support only after the English version is stable.
 

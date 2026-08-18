@@ -21,6 +21,7 @@ const {
 
 const pageTitle = title === site.title ? title : seo.titleTemplate.replace('%s', title);
 const canonical = new URL(path, seo.canonicalBaseUrl).toString();
+const image = new URL(seo.defaultImage, seo.canonicalBaseUrl).toString();
 ---
 
 <!doctype html>
@@ -36,6 +37,13 @@ const canonical = new URL(path, seo.canonicalBaseUrl).toString();
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
   </head>
   <body>
     <div class="background-layer" aria-hidden="true"></div>

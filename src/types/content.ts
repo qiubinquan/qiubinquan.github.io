@@ -129,6 +129,13 @@ export interface PublicationItem {
   title: string;
   venue: string;
   year: string;
+  type: 'journal' | 'conference';
+  volume?: string;
+  issue?: string;
+  pages?: string;
+  doi?: string;
+  location?: string;
+  publisher?: string;
 }
 
 export interface Project {
