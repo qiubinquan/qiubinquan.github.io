@@ -12,9 +12,30 @@ const email = externalLinks.email.replace('mailto:', '');
 const location = 'Hiroshima, Japan';
 
 const galleryItems = [
-  'Gallery item 1',
-  'Gallery item 2',
-  'Gallery item 3',
+  {
+    src: '/images/gallery/fireworks-2026.jpg',
+    alt: 'Fireworks in 2026',
+  },
+  {
+    src: '/images/gallery/fushishan-2026.jpg',
+    alt: 'Mount Fuji in 2026',
+  },
+  {
+    src: '/images/gallery/university-2026.jpg',
+    alt: 'University view in 2026',
+  },
+  {
+    src: '/images/gallery/hiroshima-2026.jpg',
+    alt: 'Hiroshima in 2026',
+  },
+  {
+    src: '/images/gallery/gongdao-2025.jpg',
+    alt: 'Miyajima in 2025',
+  },
+  {
+    src: '/images/gallery/temple-2025.jpg',
+    alt: 'Temple visit in 2025',
+  },
 ];
 ---
 
@@ -77,11 +98,11 @@ const galleryItems = [
       </div>
     </div>
 
-    <div class="gallery-track" data-gallery-track tabindex="0" aria-label="Gallery placeholders">
+    <div class="gallery-track" data-gallery-track tabindex="0" aria-label="Gallery images">
       {galleryItems.map((item) => (
-        <div class="gallery-item">
-          <span>{item}</span>
-        </div>
+        <a class="gallery-item" href={item.src} target="_blank" rel="noreferrer">
+          <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+        </a>
       ))}
     </div>
   </section>

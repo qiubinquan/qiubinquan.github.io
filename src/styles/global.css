@@ -296,19 +296,29 @@ p {
 }
 
 .gallery-item {
-  align-items: center;
   aspect-ratio: 4 / 3;
   background: color-mix(in srgb, var(--color-surface) 76%, transparent);
-  border: 1px dashed var(--color-border);
-  color: var(--color-muted);
-  display: grid;
+  border: 1px solid var(--color-border);
+  display: block;
   min-width: 0;
-  padding: 18px;
+  overflow: hidden;
   scroll-snap-align: start;
 }
 
-.gallery-item span {
-  justify-self: center;
+.gallery-item:hover {
+  border-color: var(--color-accent);
+}
+
+.gallery-item img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 180ms ease;
+  width: 100%;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.03);
 }
 
 .content-band,
