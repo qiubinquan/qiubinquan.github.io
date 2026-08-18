@@ -2,6 +2,21 @@
 import SectionHeading from '../../components/SectionHeading.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { pageMetadata } from '../../config/seo';
+
+const newsItems = [
+  {
+    date: '2026 May',
+    text: 'Mr. Qiu (D1) gave research presentations at the JpGU-AGU Joint Meeting 2026, held from May 27 to May 30 at Makuhari Messe in Chiba.',
+  },
+  {
+    date: '2025 Oct.',
+    text: 'Qiu Binquan joined the Complex Systems Science Laboratory at Hiroshima University as a doctoral student.',
+  },
+  {
+    date: '2025 Oct.',
+    text: "Qiu Binquan was selected as a SPRING fellow in Hiroshima University's Program for Developing and Supporting the Next-Generation of Innovative Researchers.",
+  },
+];
 ---
 
 <BaseLayout
@@ -16,6 +31,13 @@ import { pageMetadata } from '../../config/seo';
       title="News"
     />
 
-    <p class="reserved-note">No news has been posted yet.</p>
+    <ul class="news-list">
+      {newsItems.map((item) => (
+        <li>
+          <strong>{item.date}</strong>
+          <span>{item.text}</span>
+        </li>
+      ))}
+    </ul>
   </section>
 </BaseLayout>

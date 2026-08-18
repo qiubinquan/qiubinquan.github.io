@@ -357,6 +357,7 @@ p {
   align-items: baseline;
   display: flex;
   flex-wrap: wrap;
+  font-size: 1.12rem;
   gap: 0.35em;
   line-height: 1.25;
 }
@@ -395,9 +396,29 @@ p {
   max-width: none;
 }
 
+.news-list {
+  color: var(--color-muted);
+  line-height: 1.7;
+  margin: 36px 0 0;
+  padding-left: 1.25rem;
+}
+
+.news-list li + li {
+  margin-top: 8px;
+}
+
+.news-list strong {
+  color: var(--color-text);
+}
+
+.news-list span {
+  margin-left: 0.35em;
+}
+
 .timeline-item li,
 .publication-list li,
-.info-grid li {
+.info-grid li,
+.news-list li {
   text-align: justify;
   text-align-last: left;
 }
