@@ -217,7 +217,7 @@ p {
 }
 
 .profile-photo {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1;
   background: color-mix(in srgb, var(--color-surface) 76%, transparent);
   border: 1px solid var(--color-border);
   display: block;
@@ -537,7 +537,7 @@ p {
   }
 
   .profile-photo {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 1;
     margin-top: 0;
     min-height: 220px;
     width: 100%;
