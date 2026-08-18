@@ -221,7 +221,7 @@ p {
   background: color-mix(in srgb, var(--color-surface) 76%, transparent);
   border: 1px solid var(--color-border);
   display: block;
-  margin-top: calc(clamp(1.55rem, 3.6vw, 2.8rem) * 1.12 + 28px);
+  margin-top: calc(clamp(1.55rem, 3.6vw, 2.8rem) * 1.12 + 28px + 6.1rem);
   min-height: 300px;
   overflow: hidden;
 }
@@ -370,11 +370,13 @@ p {
 
 .project-title-line {
   align-items: baseline;
+  color: var(--color-muted);
   display: flex;
   flex-wrap: wrap;
-  font-size: 1.12rem;
+  font-size: 1rem;
+  font-weight: 700;
   gap: 0.35em;
-  line-height: 1.25;
+  line-height: 1.7;
 }
 
 .project-title-line span + span::before {
@@ -427,7 +429,9 @@ p {
 }
 
 .news-list strong {
-  color: var(--color-text);
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
 }
 
 .news-list span {

@@ -22,7 +22,9 @@ import { profile } from '../data/profile';
         <h2>Research Interests</h2>
         {
           profile.interests.length > 0 ? (
-            <p>{profile.interests.join(', ')}</p>
+            <ul>
+              {profile.interests.map((item) => <li>{item}</li>)}
+            </ul>
           ) : (
             <p>To be added.</p>
           )
