@@ -41,14 +41,11 @@ Public routes:
 - `/publications/`
 - `/news/`
 
-Compatibility redirect:
-
-- `/project/` redirects to `/projects/`
-
 Not available in the first version:
 
 - `/projects/:slug/`
 - `/members/`
+- `/project/`
 - `/resources/`
 - `/contact/`
 - `/writing/`
@@ -78,7 +75,7 @@ Not available in the first version:
 │  │  ├─ gallery.ts
 │  │  ├─ news.ts
 │  │  ├─ profile.ts
-│  │  └─ projects.ts
+│  │  └─ team-projects.ts
 │  ├─ layouts/
 │  │  └─ BaseLayout.astro
 │  ├─ pages/
@@ -137,7 +134,7 @@ Content data for the site.
 - `gallery.ts`: gallery image paths and alt text used by Home.
 - `news.ts`: dated news entries used by News.
 - `profile.ts`: personal profile, education, experience, publications, patents, awards, and skills.
-- `projects.ts`: intentionally empty in v1 and reserved for future team or project content.
+- `team-projects.ts`: intentionally empty in v1 and reserved for future team project content.
 
 `src/layouts/`
 
@@ -229,7 +226,7 @@ Edit:
 src/data/profile.ts
 ```
 
-The current Project Experience page renders approved research and engineering experience from `projectExperience` and `workExperience` in the profile data. The separate `src/data/projects.ts` file is reserved for future structured project content.
+The current Project Experience page renders approved research and engineering experience from `projectExperience` and `workExperience` in the profile data. The separate `src/data/team-projects.ts` file is reserved for future team project content.
 
 ### Static Images
 
