@@ -29,7 +29,10 @@ const galleryItems = [
       <dl class="profile-meta">
         <div>
           <dt>Affiliation</dt>
-          <dd>{profile.affiliation}</dd>
+          <dd class="affiliation-lines">
+            <span>Graduate School of Advanced Science and Engineering</span>
+            <span>Hiroshima University</span>
+          </dd>
         </div>
         <div>
           <dt>Position</dt>
@@ -45,6 +48,8 @@ const galleryItems = [
             <a href={externalLinks.github}>GitHub</a>
             <span aria-hidden="true">/</span>
             <a href={externalLinks.orcid}>ORCID</a>
+            <span aria-hidden="true">/</span>
+            <a href="https://csslab.jp/en/">CSS Lab</a>
           </dd>
         </div>
       </dl>
