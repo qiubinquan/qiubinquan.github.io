@@ -6,11 +6,6 @@ export const contentRegistry: ContentRegistry = {
     listPath: '/projects/',
     detailPathPattern: null,
   },
-  writing: {
-    status: 'reserved',
-    listPath: '/writing/',
-    detailPathPattern: '/writing/:slug/',
-  },
   members: {
     status: 'reserved',
     listPath: '/members/',
@@ -27,13 +22,6 @@ export const contentRegistry: ContentRegistry = {
     detailPathPattern: null,
   },
 };
-
-export const writingCategories = [
-  'research-note',
-  'technical-note',
-  'reading-note',
-  'personal-update',
-] as const;
 
 export const projectCategories = [
   'research',

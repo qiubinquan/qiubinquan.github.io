@@ -25,20 +25,10 @@ export const pageMetadata = {
     description: `Selected project experience by ${site.name}.`,
     path: '/projects/',
   },
-  writing: {
-    title: 'Publications',
-    description: `Publications and writing by ${site.name}.`,
-    path: '/writing/',
-  },
   publications: {
     title: 'Publications',
     description: `Publications and patents by ${site.name}.`,
     path: '/publications/',
-  },
-  contact: {
-    title: 'News',
-    description: `Redirect to news by ${site.name}.`,
-    path: '/contact/',
   },
   news: {
     title: 'News',

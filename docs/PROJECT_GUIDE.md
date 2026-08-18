@@ -41,24 +41,17 @@ Public routes:
 - `/publications/`
 - `/news/`
 
-Compatibility redirects:
+Compatibility redirect:
 
 - `/project/` redirects to `/projects/`
-- `/writing/` redirects to `/publications/`
-- `/writting/` redirects to `/publications/`
-- `/contact/` redirects to `/news/`
-
-Reserved dynamic route:
-
-- `/writing/:slug/`
-
-Writing detail pages are reserved for future expansion and are generated only for entries whose `status` is `published`.
 
 Not available in the first version:
 
 - `/projects/:slug/`
 - `/members/`
 - `/resources/`
+- `/contact/`
+- `/writing/`
 
 ## Project Structure
 
@@ -72,11 +65,8 @@ Not available in the first version:
 │     └─ og-default.webp
 ├─ src/
 │  ├─ components/
-│  │  ├─ BackLink.astro
-│  │  ├─ Breadcrumb.astro
 │  │  ├─ Footer.astro
 │  │  ├─ Header.astro
-│  │  ├─ PageCard.astro
 │  │  └─ SectionHeading.astro
 │  ├─ config/
 │  │  ├─ content.ts
@@ -85,14 +75,14 @@ Not available in the first version:
 │  │  ├─ seo.ts
 │  │  └─ site.ts
 │  ├─ data/
+│  │  ├─ gallery.ts
+│  │  ├─ news.ts
 │  │  ├─ profile.ts
-│  │  ├─ projects.ts
-│  │  └─ writing.ts
+│  │  └─ projects.ts
 │  ├─ layouts/
 │  │  └─ BaseLayout.astro
 │  ├─ pages/
 │  │  ├─ about.astro
-│  │  ├─ contact.astro
 │  │  ├─ index.astro
 │  │  ├─ news/
 │  │  │  └─ index.astro
@@ -102,11 +92,6 @@ Not available in the first version:
 │  │  │  └─ index.astro
 │  │  ├─ publications/
 │  │  │  └─ index.astro
-│  │  ├─ writing/
-│  │  │  ├─ [slug].astro
-│  │  │  └─ index.astro
-│  │  └─ writting/
-│  │     └─ index.astro
 │  ├─ styles/
 │  │  └─ global.css
 │  └─ types/
@@ -133,9 +118,6 @@ Reusable UI components.
 
 - `Header.astro`: site title and primary navigation, loaded from `src/config/navigation.ts`.
 - `Footer.astro`: copyright and optional external links, loaded from `src/config/site.ts`.
-- `PageCard.astro`: reusable card for future list pages.
-- `Breadcrumb.astro`: page hierarchy for writing detail pages.
-- `BackLink.astro`: explicit return links for future detail pages.
 - `SectionHeading.astro`: shared page and section headings.
 
 `src/config/`
@@ -152,9 +134,10 @@ Site-level configuration. Prefer changing these files instead of hard-coding sit
 
 Content data for the site.
 
+- `gallery.ts`: gallery image paths and alt text used by Home.
+- `news.ts`: dated news entries used by News.
 - `profile.ts`: personal profile, education, experience, publications, patents, awards, and skills.
-- `projects.ts`: intentionally empty in v1.
-- `writing.ts`: reserved writing metadata. Only `published` entries are built.
+- `projects.ts`: intentionally empty in v1 and reserved for future team or project content.
 
 `src/layouts/`
 
@@ -206,47 +189,37 @@ Fields:
 
 Keep private or sensitive personal details out of this file unless they are intended to be public.
 
-### Writing
+### Gallery
 
 Edit:
 
 ```text
-src/data/writing.ts
+src/data/gallery.ts
 ```
 
-Each writing entry has:
+Each gallery entry has:
 
-- `slug`
-- `title`
-- `summary`
-- `category`
-- `status`
-- `publishedAt`
-- `updatedAt`
-- `tags`
-- `externalLinks`
+- `src`
+- `alt`
 
-Only entries with:
-
-```ts
-status: 'published'
-```
-
-are generated as `/writing/:slug/`. The public `/writing/` route currently redirects to `/publications/`.
-
-Entries with these statuses are not published:
-
-```ts
-status: 'draft'
-status: 'reserved'
-```
-
-Use kebab-case for slugs, for example:
+Images should be stored under:
 
 ```text
-research-note-urban-traffic
-technical-note-astro-site
+public/images/gallery/
 ```
+
+### News
+
+Edit:
+
+```text
+src/data/news.ts
+```
+
+Each news entry has:
+
+- `date`
+- `text`
 
 ### Project Experience
 
@@ -365,19 +338,16 @@ https://qiubinquan.github.io/
 
 Examples:
 
-- `/writing/research-note-urban-traffic/`
-- `BackLink.astro`
-- `PageCard.astro`
+- `/projects/`
+- `/publications/`
 - `externalLinks`
-- `publishedAt`
-- `research-note`
-- `technical-note`
+- `projectExperience`
+- `first-project-title`
 
 ## Extension Notes
 
 Recommended future additions:
 
-- Decide whether long-form writing should move from TypeScript data to Astro content collections.
 - Add DOI, volume, issue, and page information to publication records whenever verified details are available.
 - Add detailed Project Experience rendering only after public project content is explicitly approved.
 - Add multilingual support only after the English version is stable.

@@ -2,41 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { pageMetadata } from '../config/seo';
 import { externalLinks } from '../config/site';
+import { galleryItems } from '../data/gallery';
 import { profile } from '../data/profile';
 
 const bio = profile.bio
   ? profile.bio.split('\n\n')
-  : ['Personal academic website for notes, selected writing, and future public work.'];
+  : ['Personal academic website for profile, project experience, publications, and news.'];
 
 const email = externalLinks.email.replace('mailto:', '');
 const location = 'Hiroshima, Japan';
 
-const galleryItems = [
-  {
-    src: '/images/gallery/fireworks-2026.jpg',
-    alt: 'Fireworks in 2026',
-  },
-  {
-    src: '/images/gallery/fushishan-2026.jpg',
-    alt: 'Mount Fuji in 2026',
-  },
-  {
-    src: '/images/gallery/university-2026.jpg',
-    alt: 'University view in 2026',
-  },
-  {
-    src: '/images/gallery/hiroshima-2026.jpg',
-    alt: 'Hiroshima in 2026',
-  },
-  {
-    src: '/images/gallery/gongdao-2025.jpg',
-    alt: 'Miyajima in 2025',
-  },
-  {
-    src: '/images/gallery/temple-2025.jpg',
-    alt: 'Temple visit in 2025',
-  },
-];
 ---
 
 <BaseLayout

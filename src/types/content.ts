@@ -4,20 +4,12 @@ export type SiteSection =
   | 'home'
   | 'about'
   | 'projects'
-  | 'writing'
-  | 'contact'
   | 'members'
   | 'publications'
   | 'news'
   | 'resources';
 
 export type ContentStatus = 'draft' | 'published' | 'reserved';
-
-export type WritingCategory =
-  | 'research-note'
-  | 'technical-note'
-  | 'reading-note'
-  | 'personal-update';
 
 export type ProjectCategory =
   | 'research'
@@ -54,7 +46,6 @@ export interface NavigationItem {
 export interface FeatureFlags {
   projects: boolean;
   projectDetailPages: boolean;
-  writing: boolean;
   team: boolean;
   publications: boolean;
   news: boolean;
@@ -71,7 +62,6 @@ export interface ContentSectionConfig {
 
 export interface ContentRegistry {
   projects: ContentSectionConfig;
-  writing: ContentSectionConfig;
   members: ContentSectionConfig;
   publications: ContentSectionConfig;
   news: ContentSectionConfig;
@@ -148,16 +138,14 @@ export interface Project {
   externalLinks: LinkItem[];
 }
 
-export interface WritingEntry {
-  slug: string;
-  title: string;
-  summary: string;
-  category: WritingCategory;
-  status: ContentStatus;
-  publishedAt: string;
-  updatedAt?: string;
-  tags: string[];
-  externalLinks: LinkItem[];
+export interface GalleryItem {
+  src: string;
+  alt: string;
+}
+
+export interface NewsItem {
+  date: string;
+  text: string;
 }
 
 export interface LinkItem {
